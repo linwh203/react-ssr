@@ -1,0 +1,51 @@
+Arguments: 
+  /usr/local/Cellar/node/10.10.0/bin/node /usr/local/bin/yarn add webpack
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/apple/Library/Caches/Yarn/v6/npm-ms-2.0.0-5608aeadfc00be6c2901df5f9861788de0d597c8-integrity/node_modules/ms/license.md' -> '/Users/apple/Desktop/demo/ssr-camp/node_modules/debug/node_modules/ms/license.md'
+
+npm manifest: 
+  {
+    "name": "ssr-camp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev:server": "webpack --config webpack.server.js --watch",
+      "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.7.5",
+      "@babel/preset-env": "^7.7.6",
+      "@babel/preset-react": "^7.7.4",
+      "webpack-cli": "^3.3.10",
+      "webpack-node-externals": "^1.7.2"
+    },
+    "dependencies": {
+      "babel-loader": "^8.0.6",
+      "express": "^4.17.1",
+      "react": "^16.12.0",
+      "react-dom": "^16.12.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
