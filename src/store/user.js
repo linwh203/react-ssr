@@ -5,38 +5,38 @@ import axios from 'axios'
 
 // 首页的逻辑
 // actionType
-const GET_LIST = "INDEX/GET_LIST";
+const USER_INFO = "USER/USER_INFO";
 
 // actionCreator
-const changList = list => ({
-  type: GET_LIST,
-  list
+const changUserinfo = userinfo => ({
+  type: USER_INFO,
+  userinfo
 });
 
 // dispatch
-export const getIndexList = server => {
+export const getUserInfo = server => {
   return (dispatch, getState, axiosInstance) => {
-    return axios.get("http://localhost:9091/api/course/list").then(res => {
+    return axios.get("http://localhost:9091/api/user/info").then(res => {
       const {
-        list
+        data
       } = res.data;
-      console.log('list', list)
-      dispatch(changList(list));
+      console.log('data', data)
+      dispatch(changUserinfo(data));
     });
   };
 };
 
 // initstate
 const defaultState = {
-  list: []
+  userinfo: {}
 };
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case GET_LIST:
+    case USER_INFO:
       const newState = {
         ...state,
-        list: action.list
+        userinfo: action.userinfo
       };
       return newState;
     default:
